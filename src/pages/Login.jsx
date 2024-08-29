@@ -1,145 +1,127 @@
 import React, { useEffect, useState } from "react";
-import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../Utills/Firebase";
+import { useNavigate } from "react-router-dom";
+import { loginWithEmail, monitorAuthState } from "../Utills/authAction";
+import Loader from "../Components/Loader";
 import styled from "styled-components";
-import { useStateProvider } from "../Provider/StateProvider";
-import { reducerConstants } from "../Action";
-import { json, useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const [{ token }, dispatch] = useStateProvider();
-  // console.log(state.token);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPhoneNumber, setLoginPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
-  const [disabledEmail, setDisabledEmail] = useState(false);
-  // const [disabledNumber, setDisabledNumber] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     // const navigation = localStorage.getItem("path");
-    const navigation = "/";
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        try {
-          const token = await user.getIdToken();
-          localStorage.setItem("token", JSON.stringify(token));
-          navigate(navigation);
-        } catch (error) {
-          console.error("Error getting user token:", error);
-        }
-      }
-    });
-
+    const unsubscribe = monitorAuthState(navigate); // Use monitorAuthState action
     return () => unsubscribe();
-  }, []);
-  const handleEmail = (e) => {
-    const emailValue = e.target.value;
-    setLoginEmail(emailValue);
-    // if (emailValue !== "") {
-    //   setDisabledNumber(true);
-    // } else {
-    //   setDisabledNumber(false);
-    // }
+  }, [navigate]);
+  const handleEmailLogin = async (e) => {
+    e.preventDefault();
+    await loginWithEmail(loginEmail, password, setLoading, navigate);
   };
 
   // const handlePhoneNumber = (e) => {
-  //   const phoneNumberValue = e.target.value;
-  //   setLoginPhoneNumber(phoneNumberValue);
-  //   if (phoneNumberValue !== "") {
-  //     setDisabledEmail(true);
-  //   } else {
-  //     setDisabledEmail(false);
-  //   }
+  //   e.preventDefault();
+  //   await loginWithPhoneNumber(loginPhoneNumber, setLoading, navigate);
   // };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      if (loginEmail !== "") {
-        await signInWithEmailAndPassword(auth, loginEmail, password);
-
-        console.log("Login successful with email!");
-      } else {
-        await auth.signInWithEmailAndPassword(loginPhoneNumber, password);
-        console.log("Login successful with phone number!");
-      }
-    } catch (error) {
-      console.error("Error during login:", error.message);
-    }
-  };
-
   return (
-    <Container className="container">
-      <label>Login</label>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="abc@gmail.com"
-          onChange={handleEmail}
-          disabled={disabledEmail}
-        />
-        {/*<p>Or</p>
+    <>
+      {loading ? ( // Show the loader when loading is true
+        <Loader />
+      ) : (
+        <Container className="container">
+          <label>Login</label>
+          <form onSubmit={handleEmailLogin}>
+            <input
+              type="email"
+              placeholder="abc@gmail.com"
+              onChange={(e) => setLoginEmail(e.target.value)}
+            />
+            {/*<p>Or</p>
          <input
           type="number"
           placeholder="+919988774455"
           onChange={handlePhoneNumber}
           disabled={disabledNumber}
         /> */}
-        <input type="password" onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit">Sign In</button>
-      </form>
-      {/* {console.log(user)} */}
-    </Container>
+            <input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit">Sign In</button>
+          </form>
+
+          {/* {console.log(user)} */}
+        </Container>
+      )}
+    </>
   );
 }
 
 const Container = styled.div`
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   background-color: white;
-  height: 70vh;
-  width: 30vw;
-  box-shadow: 0 8px 16px rgb(98 98 98 / 98%), 0 12px 32px rgba(0, 0, 0, 0.12),
-    0 16px 40px rgb(151 151 151 / 85%);
+  height: auto;
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(98, 98, 98, 0.98), 0 12px 32px rgba(0, 0, 0, 0.12),
+    0 16px 40px rgba(151, 151, 151, 0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #000000;
-  font-weight: bold;
-  border-radius: 0.5rem;
+  color: #000;
+  border-radius: 1rem;
+  margin: 5vh auto;
+
   label {
-    background-color: #a8a8a8;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 0.5rem;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 1rem;
     text-align: center;
-    width: 5rem;
+    font-size: 1.5rem;
+    width: 100%;
   }
+
   form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    width: 100%;
+
     input {
-      margin-bottom: 10px;
-      padding: 5px;
-      border-radius: 0.3rem;
-      border: 1px solid black;
+      margin-bottom: 20px;
+      padding: 12px;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+      }
     }
+
     button {
-      width: 5rem;
-      padding: 5px;
-      border-radius: 0.3rem;
-      border: 1px solid black;
+      width: 100%;
+      padding: 12px;
+      border-radius: 0.5rem;
+      border: none;
       cursor: pointer;
-      background-color: #0000ff;
+      background-color: #007bff;
       color: white;
+      font-size: 1.2rem;
       font-weight: bold;
+      transition: background-color 0.3s ease;
+
       &:hover {
-        background-color: #5151ff;
+        background-color: #0056b3;
       }
     }
   }

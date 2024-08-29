@@ -12,11 +12,42 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  background-color: #121212;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121212; /* Dark background for a modern look */
-  color: #ffffff; /* White text for contrast */
   animation: fadeIn 1s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #f0f0f0;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #cccccc;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+.login__nav:hover,
+.logout__nav:hover {
+  color: #0056b3;
+  cursor: pointer;
 }
 
 code {
@@ -30,7 +61,7 @@ code {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   min-height: 100vh;
   padding: 0 20px;
 }
@@ -59,6 +90,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  align-items: center;
 }
 
 a {
@@ -69,7 +101,8 @@ a {
 .nav-menu {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+  align-items: center;
+  /* width: 100%; */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -81,6 +114,7 @@ a {
 
 .login__nav,
 .logout__nav {
+  transition: color 0.3s ease;
   padding: 0.5rem;
 }
 
@@ -336,15 +370,15 @@ a {
 }
 
 .frontend {
-  background-color: #e6f7ff33; /* Semi-transparent light blue */
+  background-color: #e6f7ff33;
 }
 
 .backend {
-  background-color: #e6ffe633; /* Semi-transparent light green */
+  background-color: #e6ffe633;
 }
 
 .database {
-  background-color: #fff2e633; /* Semi-transparent light orange */
+  background-color: #fff2e633;
 }
 
 .frontend h3,
@@ -365,16 +399,34 @@ a {
   transition: background-color 0.3s ease;
 }
 
+/* .skill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #007bff;
+  transition: width 1s ease;
+  z-index: 0;
+} */
+
 .frontend .skill:hover {
   background-color: #cce5ff;
+  color: black;
+  cursor: pointer;
 }
 
 .backend .skill:hover {
   background-color: #d2eeb4;
+  color: black;
+  cursor: pointer;
 }
 
 .database .skill:hover {
   background-color: #ffe0b3;
+  color: black;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 480px) {
