@@ -5,7 +5,7 @@ function Skills() {
   //   localStorage.setItem("path", "/skills");
   // }, []);
   return (
-    <div id="skills" className="what-I-know">
+    <section id="skills" className="what-I-know width98">
       <h1>What I Know</h1>
       <div className="skill-type">
         <div className="frontend">
@@ -54,7 +54,7 @@ function Skills() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

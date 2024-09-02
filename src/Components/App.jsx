@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
+const Home = lazy(() => import("./Home"));
+const Login = lazy(() => import("../pages/Login"));
 import NavBar from "./NavBar";
-import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
-import Projects from "./Projects";
-import Experiences from "./Experiences";
-import Skills from "./Skills";
-import Login from "../pages/Login";
-import { useStateProvider } from "../Provider/StateProvider";
-import { reducerConstants } from "../Action";
+const About = lazy(() => import("./About/About"));
+const Skills = lazy(() => import("./Skills"));
+const Projects = lazy(() => import("./Projects"));
+const Experiences = lazy(() => import("./Experiences"));
+const Contact = lazy(() => import("./Contact"));
 
 function App() {
   // const [{ token }, dispatch] = useStateProvider();
@@ -16,10 +15,12 @@ function App() {
     <div className="app">
       <Router basename="">
         <NavBar />
-        <Routes>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/" element={<MainContent />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<MainContent />} />
+          </Routes>
+        </Suspense>
       </Router>
     </div>
   );
@@ -27,14 +28,14 @@ function App() {
 
 function MainContent() {
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Home />
       <About />
       <Skills />
       <Projects />
       <Experiences />
       <Contact />
-    </>
+    </Suspense>
   );
 }
 
