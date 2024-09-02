@@ -35,7 +35,7 @@ function Experiences() {
   ];
 
   return (
-    <div id="experiences">
+    <section id="experiences" className="width98">
       {experiences.map((experience, index) => (
         <ExperienceComponent
           key={index}
@@ -46,7 +46,7 @@ function Experiences() {
           techStack={experience.techStack}
         />
       ))}
-    </div>
+    </section>
   );
 }
 

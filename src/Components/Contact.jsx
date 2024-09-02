@@ -4,7 +4,7 @@ import ContactForm from "../ContactForm";
 
 function Contact() {
   return (
-    <div id="contact" className="contact">
+    <section id="contact" className="contact width98">
       <ContactForm />
       <div className="icon-container">
         <a
@@ -32,7 +32,7 @@ function Contact() {
           <FaPhoneAlt />
         </a>
       </div>
-    </div>
+    </section>
   );
 }
 

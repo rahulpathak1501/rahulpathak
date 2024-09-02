@@ -23,7 +23,7 @@ function NavBar() {
   };
 
   return (
-    <div className="NavBar">
+    <section className="navbar width98">
       <img alt="Logo" />
       <nav>
         <ul className="nav-menu">
@@ -70,7 +70,7 @@ function NavBar() {
           </div>
         )}
       </nav>
-    </div>
+    </section>
   );
 }
 

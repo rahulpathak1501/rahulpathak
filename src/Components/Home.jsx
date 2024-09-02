@@ -1,15 +1,15 @@
 import { useEffect } from "react";
-import profileImage from "../assests/profileImage.jpg";
+import profileImage from "../assets/profileImage.jpg";
 
 function Home() {
   // useEffect(() => {
   //   localStorage.setItem("path", "/");
   // }, []);
   return (
-    <div id="home" className="Home">
+    <section id="home" className="home width98">
       <img alt="myImg" src={profileImage} />
       <h1>Rahul Pathak</h1>
-    </div>
+    </section>
   );
 }
 

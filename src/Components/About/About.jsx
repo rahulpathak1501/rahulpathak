@@ -75,7 +75,7 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="about">
+    <section id="about" className="about width98">
       <div className="about__content">
         {editMode ? (
           <Suspense fallback={<Loader />}>
