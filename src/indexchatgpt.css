@@ -55,6 +55,47 @@ code {
     monospace;
 }
 
+/* Global Button Styles */
+button,
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover,
+.btn:hover {
+  background-color: #0056b3;
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+button:focus,
+.btn:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 4px rgba(0, 123, 255, 0.5);
+}
+
+button:disabled,
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 /* App */
 .app {
   display: flex;
