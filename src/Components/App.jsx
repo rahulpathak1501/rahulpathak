@@ -21,8 +21,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<MainContent />} />
             <Route path="/resume" element={<Resume />} />
-
-
           </Routes>
         </Suspense>
       </Router>
