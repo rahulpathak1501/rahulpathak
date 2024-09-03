@@ -33,9 +33,9 @@ function NavBar() {
           <li>
             <a href="#about">About</a>
           </li>
-          <li>
+          {/* <li>
             <a href="#project">Projects</a>
-          </li>
+          </li> */}
           <li>
             <a href="#skills">Skills</a>
           </li>
@@ -44,6 +44,11 @@ function NavBar() {
           </li>
           <li>
             <a href="#contact">Contact</a>
+          </li>
+          <li>
+            <a href="/resume" target="_blank" rel="noopener noreferrer">
+              Resume
+            </a>
           </li>
         </ul>
         <div className="hamburger-menu">

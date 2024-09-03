@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 const Home = lazy(() => import("./Home"));
 const Login = lazy(() => import("../pages/Login"));
 import NavBar from "./NavBar";
+import Resume from "./Resume";
 const About = lazy(() => import("./About/About"));
 const Skills = lazy(() => import("./Skills"));
 const Projects = lazy(() => import("./Projects"));
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<MainContent />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </Suspense>
       </Router>
@@ -32,7 +34,7 @@ function MainContent() {
       <Home />
       <About />
       <Skills />
-      <Projects />
+      {/* <Projects /> */}
       <Experiences />
       <Contact />
     </Suspense>
