@@ -24,7 +24,9 @@ function NavBar() {
 
   return (
     <section className="navbar width98">
+
       <img alt="Logo" src={logo} />
+
       <nav>
         <ul className="nav-menu">
           <li>
