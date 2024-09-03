@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../Utills/Firebase";
-import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 import Login from "../pages/Login";
+import logo from "../assets/logo.png";
 import { LoginModal } from "../pages/LoginModal";
 
 function NavBar() {
@@ -24,7 +24,7 @@ function NavBar() {
 
   return (
     <section className="navbar width98">
-      <img alt="Logo" />
+      <img alt="Logo" src={logo} />
       <nav>
         <ul className="nav-menu">
           <li>
@@ -80,33 +80,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-{
-  /* <nav>
-        <ul className="nav-menu">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li>
-            <Link to="/skills">Skills</Link>
-          </li>
-          <li>
-            <Link to="/experiences">Experiences</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-        <div className="hamburger-menu">
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
-      </nav> */
-}
