@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../Utills/Firebase";
+
 import { useState, useEffect, useCallback } from "react";
+
 import Login from "../pages/Login";
 import logo from "../assets/logo.png";
 import { LoginModal } from "../pages/LoginModal";
@@ -57,6 +59,7 @@ function NavBar() {
   return (
     <section className="navbar width98">
       <img alt="Logo" src={logo} />
+
       <nav>
         <ul className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
           <li>
@@ -65,6 +68,10 @@ function NavBar() {
           <li>
             <a href="#about">About</a>
           </li>
+          {/* <li>
+            <a href="#project">Projects</a>
+          </li> */}
+
           <li>
             <a href="#skills">Skills</a>
           </li>
