@@ -155,6 +155,14 @@ a {
   margin: 0;
 }
 
+.nav-menu.active {
+  display: flex;
+  width: 20%;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 2%;
+}
+
 .nav-menu li {
   margin: 0 1rem;
 }
