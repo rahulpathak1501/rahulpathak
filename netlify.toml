@@ -1,1 +1,7 @@
-/*    /index.html   200
+[build]
+  publish = "build"  # Adjust this if your build folder is different (e.g., "dist" or "public")
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
