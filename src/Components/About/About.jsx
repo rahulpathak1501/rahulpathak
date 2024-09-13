@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Loader from "../Loader";
 const ViewMode = lazy(() => import("./ViewMode"));
 const EditMode = lazy(() => import("./EditMode"));
+import "../../CSSFiles/about.css";
+
 
 const About = () => {
   const token = localStorage.getItem("token");
@@ -73,10 +75,10 @@ const About = () => {
   if (error) {
     return <p>{error}</p>;
   }
-
   return (
-    <section id="about" className="about width98">
-      <div className="about__content">
+    <section className="intro text-center section-padding color-bg" id="about">
+      <div>
+
         {editMode ? (
           <Suspense fallback={<Loader />}>
             <EditMode

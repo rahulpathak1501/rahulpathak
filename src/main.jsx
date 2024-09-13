@@ -1,24 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./indexchatgpt.css";
-import App from "./Components/App";
-import { StateProvider } from "./Provider/StateProvider";
-import reducer, { initialState } from "./Reducers";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./Router";
-// import { Provider } from "react-redux";
-// import { createStore } from "redux";
-// import Login from "./pages/Login";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "../src/components/App";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-//const store = createStore();
-
-root.render(
-  <React.StrictMode>
-    <StateProvider initialState={initialState} reducer={reducer}>
-      <App />
-      {/* <RouterProvider router={router} /> */}
-    </StateProvider>
-  </React.StrictMode>
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
 );

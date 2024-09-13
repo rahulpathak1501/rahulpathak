@@ -1,0 +1,21 @@
+/* RotatingText.css */
+
+.rotating-text-container {
+  position: relative;
+  overflow: hidden;
+  height: 2.5em;
+}
+
+.rotating-text {
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.rotating-text.fade-in {
+  opacity: 1;
+}
+
+.rotating-text.fade-out {
+  opacity: 0;
+}

@@ -1,0 +1,25 @@
+ [
+    {
+      jobTitle: "System Engineer",
+      company: "Tata Consultancy Services",
+      fromDate: "June 2024",
+      toDate: "Present",
+      responsibilities: [
+        "Developed new user-facing features using React.js.",
+        "Optimized application performance and reduced load times.",
+        "Collaborated with cross-functional teams in an Agile environment.",
+      ],
+    },
+    {
+      jobTitle: "ReactJS Developer",
+      company: "Wipro Technologies",
+      fromDate: "October 2019",
+      toDate: "May 2023",
+      responsibilities: [
+        "Built interactive web applications using React.js.",
+        "Improved app performance using Redux and React Context.",
+        "Managed state with advanced techniques and optimized APIs.",
+      ],
+    },
+    // Add more experiences as needed
+  ];

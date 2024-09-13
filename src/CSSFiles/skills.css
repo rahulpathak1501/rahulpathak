@@ -1,0 +1,113 @@
+/* Skills section */
+.resume-section {
+  background-color: #ffffff; /* White background */
+  padding: 3rem 0;
+  text-align: center;
+}
+
+/* Subheading styling */
+.subheading {
+  font-size: 24px;
+  color: #e04343;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Programming icons list */
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* Allow icons to wrap */
+  justify-content: center; /* Center the icons on all screens */
+}
+
+.list-inline-item {
+  margin: 15px;
+}
+
+.list-inline-item i {
+  font-size: 48px;
+  color: #353535;
+}
+
+/* Workflow list */
+.fa-ul {
+  padding-left: 0; /* Remove default padding */
+}
+
+.fa-ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #353535;
+  list-style: none;
+}
+
+.fa-ul li i {
+  color: #e04343;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  /* For large screens (1200px or less) */
+  .list-inline-item i {
+    font-size: 40px;
+  }
+
+  .subheading {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* For medium screens (992px or less) */
+  .list-inline-item {
+    margin: 10px;
+  }
+
+  .list-inline-item i {
+    font-size: 36px;
+  }
+
+  .subheading {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* For tablets (768px or less) */
+  .list-inline-item {
+    margin: 8px;
+  }
+
+  .list-inline-item i {
+    font-size: 32px;
+  }
+
+  .subheading {
+    font-size: 18px;
+  }
+
+  .fa-ul li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* For small mobile screens (576px or less) */
+  .list-inline-item {
+    margin: 5px;
+  }
+
+  .list-inline-item i {
+    font-size: 28px;
+  }
+
+  .subheading {
+    font-size: 16px;
+  }
+
+  .fa-ul li {
+    font-size: 14px;
+  }
+}
