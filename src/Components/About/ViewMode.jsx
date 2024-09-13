@@ -22,5 +22,6 @@ export default function ViewMode({ aboutData, token, handleEdit }) {
         </div>
       </div>
     </div>
+
   );
 }

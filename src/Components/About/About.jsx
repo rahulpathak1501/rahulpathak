@@ -7,6 +7,7 @@ const ViewMode = lazy(() => import("./ViewMode"));
 const EditMode = lazy(() => import("./EditMode"));
 import "../../CSSFiles/about.css";
 
+
 const About = () => {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
@@ -26,7 +27,6 @@ const About = () => {
       try {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          // console.log(docSnap.data());
           setAboutData(docSnap.data());
         } else {
           setError("No document found.");
@@ -78,6 +78,7 @@ const About = () => {
   return (
     <section className="intro text-center section-padding color-bg" id="about">
       <div>
+
         {editMode ? (
           <Suspense fallback={<Loader />}>
             <EditMode
