@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../CSSFiles/resume.css";
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../Utills/Firebase";
 
@@ -27,7 +28,7 @@ const Resume = () => {
       {resumeUrl ? (
         <>
           <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
-            <button className="btn">Download Resume</button>
+            {/* <button className="btn">Download Resume</button> */}
           </a>
           <iframe src={resumeUrl} className="resume-iframe" title="Resume" />
         </>

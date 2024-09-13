@@ -1,10 +1,12 @@
 import { FaLinkedin, FaGithub, FaPhoneAlt } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import ContactForm from "../ContactForm";
+import "../CSSFiles/contact.css";
 
 function Contact() {
   return (
-    <section id="contact" className="contact width98">
+    <section id="contact" className="contact text-center section-padding">
+      <h1 className="arrow">Contact Me</h1>
       <ContactForm />
       <div className="icon-container">
         <a
