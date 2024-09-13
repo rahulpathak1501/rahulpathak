@@ -4,6 +4,11 @@
   background-size: cover;
 }
 
+.offset-md-2 .btn {
+  position: relative;
+  background-color: #e72d2d;
+}
+
 /* Background color and related styles */
 .color-bg {
   background: #e04343;

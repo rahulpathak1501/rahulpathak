@@ -144,7 +144,9 @@
 .show-menu .icon-list a:nth-child(6) {
   transition-delay: 0.5s;
 }
-
+.show-menu .icon-list a:nth-child(7) {
+  transition-delay: 0.52s;
+}
 /* Hero Section */
 .hero {
   background: url("../assets/img/profileImg1.jpg") right bottom no-repeat;
@@ -211,4 +213,84 @@
   width: 44px;
   height: 44px;
   animation: arrowbounce 1s alternate infinite;
+}
+
+@media (max-width: 750px) {
+  .show-menu {
+    height: auto;
+    width: auto;
+    transform: translate3d(0, 0, 0); /* Ensure no vertical shift */
+    border-bottom: 1px solid #e04343; /* Retain the border */
+  }
+
+  .icon-list {
+    flex-direction: column;
+    padding: 1.5em 1em;
+    align-items: flex-start;
+    margin-top: 3em;
+  }
+
+  .icon-list a {
+    margin: 10px 0;
+  }
+
+  .icon-list a span {
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+  }
+
+  .hero {
+    padding: 60px 0 50px 0;
+    background-size: cover;
+  }
+
+  /* Adjust hero heading and subheading for smaller screens */
+  .hero h1 {
+    font-size: 80px;
+    letter-spacing: -5px;
+    line-height: 70px;
+  }
+
+  .hero h3 {
+    font-size: 18px;
+    letter-spacing: 12px;
+    line-height: 40px;
+  }
+
+  /* Adjust arrow size for smaller screens */
+  .scrollto--arrow img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* For even smaller devices */
+@media (max-width: 480px) {
+  .icon-list {
+    padding: 1em 0.5em 0 1.5em;
+    align-items: flex-start;
+  }
+
+  .icon-list a {
+    margin: 5px 0;
+    font-size: 1em;
+  }
+
+  /* Smaller font sizes for hero section */
+  .hero h1 {
+    font-size: 60px;
+    line-height: 55px;
+  }
+
+  .hero h3 {
+    font-size: 16px;
+    letter-spacing: 10px;
+  }
+
+  .show-menu {
+    width: auto;
+    height: auto;
+    transform: translate3d(0, 0, 0);
+    border-bottom: 1px solid #e04343;
+  }
 }

@@ -26,6 +26,7 @@ const About = () => {
       try {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
+          // console.log(docSnap.data());
           setAboutData(docSnap.data());
         } else {
           setError("No document found.");

@@ -6,14 +6,11 @@ import Experiences from "./Experience/Experiences";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Resume from "./Resume";
-// import Loader from "./Loader";
-import Preloader from "./Preloader";
 
 function App() {
   return (
     <>
       <Router basename="">
-        <Preloader />
         <Routes>
           <Route path="/resume" element={<Resume />} />
           <Route

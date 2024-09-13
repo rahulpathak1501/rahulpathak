@@ -51,49 +51,34 @@ const Header = () => {
                   <span>Skills</span>
                 </a>
                 <a href="#experiences">
-                  <i className="fa fa-fw fa-picture-o"></i>
+                  <i className="fa fa-fw fa-suitcase" aria-hidden="true"></i>
                   <span>Experiences</span>
                 </a>
                 <a href="#contact">
-                  <i className="fa fa-fw fa-envelope-o"></i>
+                  <i className="fa fa-fw fa-envelope" aria-hidden="true"></i>
                   <span>Contact</span>
                 </a>
                 <a href="/resume" target="_blank" rel="noopener noreferrer">
-                  <i className="fa fa-fw fa-envelope-o"></i>
+                  <i className="fa fa-fw fa-paperclip" aria-hidden="true"></i>
                   <span>Resume</span>
                 </a>
                 {token ? (
                   <a href="#" onClick={handleLogout}>
-                    <i className="fa fa-fw fa-envelope-o"></i>
-                    <span>Sign out</span>
+                    <i className="fa fa-fw fa-user" aria-hidden="true"></i>
+                    <span>Log out</span>
                   </a>
                 ) : (
                   <a href="#" onClick={() => setIsLoginModalOpen(true)}>
-                    <i className="fa fa-fw fa-envelope-o"></i>
+                    <i className="fa fa-fw fa-user" aria-hidden="true"></i>
                     <LoginModal
                       isOpen={isLoginModalOpen}
                       onClose={() => setIsLoginModalOpen(false)}
                     >
                       <Login />
                     </LoginModal>
-                    <span>Sign In</span>
+                    <span>Log In</span>
                   </a>
                 )}
-                {/* {token ? (
-          <div className="logout__nav" onClick={handleLogout}>
-            <label>Sign Out</label>
-          </div>
-        ) : (
-          <div className="login__nav" onClick={() => setIsLoginModalOpen(true)}>
-            <LoginModal
-              isOpen={isLoginModalOpen}
-              onClose={() => setIsLoginModalOpen(false)}
-            >
-              <Login />
-            </LoginModal>
-            <label>Sign In</label>
-          </div>
-        )} */}
               </div>
             </nav>
           </div>
