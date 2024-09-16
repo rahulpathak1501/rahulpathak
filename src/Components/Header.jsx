@@ -12,7 +12,7 @@ const Header = () => {
   const token = JSON.parse(localStorage.getItem("token"));
   // const [isClicked, setIsClicked] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const texts = ["Web Designer", "Photographer", "3D Artist"];
+  const texts = ["Web Designer", "Photographer"];
   const colors = ["#E04343", "#FFE800", "#4CAF50"];
   const [isOpen, setIsOpen] = useState(false);
 
