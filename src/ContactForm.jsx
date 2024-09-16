@@ -40,7 +40,9 @@ function ContactForm() {
         setStatus("Failed to send message.");
       }
     } catch (error) {
-      setStatus("An error occurred.");
+      setStatus(
+        "An error occurred. I came to know that the mail is now not working you can mail in this id directly: rahul2.pathak3297@tcs.com"
+      );
     }
     console.log(formData);
   };
