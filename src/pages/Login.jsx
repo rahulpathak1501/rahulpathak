@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginWithEmail, monitorAuthState } from "../Utills/authAction";
-import Loader from "../components/Loader";
+import Loader from "../Components/Loader";
 import styled from "styled-components";
 
 export default function Login() {
