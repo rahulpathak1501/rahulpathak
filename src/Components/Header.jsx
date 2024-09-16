@@ -13,7 +13,7 @@ const Header = () => {
   // const [isClicked, setIsClicked] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const texts = ["Web Designer", "Photographer"];
-  const colors = ["#E04343", "#FFE800", "#4CAF50"];
+  const colors = ["#E04343", "#0dcfe9", "#4CAF50"];
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();

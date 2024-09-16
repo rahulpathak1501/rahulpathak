@@ -41,7 +41,7 @@ function ContactForm() {
       }
     } catch (error) {
       setStatus(
-        "An error occurred. I came to know that this service is now not working you can mail in this id directly: rahul2.pathak3297@gmail.com"
+        "An error occurred. I came to know that this service is now not working you can mail me directly in this id : rahul2.pathak3297@gmail.com"
       );
     }
     console.log(formData);
