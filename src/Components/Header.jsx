@@ -5,6 +5,7 @@ import { auth } from "../Utills/Firebase";
 import Login from "../pages/Login";
 import { LoginModal } from "../pages/LoginModal";
 import RotatingText from "../SupportiveComponents/RotatingText";
+import scrolldown from "../assets/img/scroll-down.png";
 import "../CSSFiles/header.css";
 
 const Header = () => {
@@ -119,10 +120,7 @@ const Header = () => {
               <a href="#about" className="scrollto wow fadeInUp delay-5s">
                 <p>SEE MORE</p>
                 <p className="scrollto--arrow">
-                  <img
-                    src="src\assets\img\scroll-down.png"
-                    alt="scroll down arrow"
-                  />
+                  <img src={scrolldown} alt="scroll down" />
                 </p>
               </a>
             </div>
